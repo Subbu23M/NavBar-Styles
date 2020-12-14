@@ -1,0 +1,163 @@
+@charset "UTF-8";
+body {
+  font-family: 'Piazzolla', serif;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+nav {
+  min-height: 8vh;
+  background-color: #5D4954;
+}
+
+nav .logo a {
+  letter-spacing: 5px;
+  color: whitesmoke;
+}
+
+nav .nav-links {
+  width: 30%;
+  /* z-index:stacks one on each other based on value  */
+  z-index: 7;
+}
+
+nav .nav-links a {
+  color: whitesmoke;
+  letter-spacing: 3px;
+  font-size: 18px;
+}
+
+nav .burger div {
+  width: 25px;
+  height: 3px;
+  background-color: whitesmoke;
+  margin: 5px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-links {
+    /* position: absolute takes elements “out of flow” so its grid space gets collapsed. */
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: #5D4954;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100% !important;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: -webkit-transform 0.5s ease-in;
+    transition: -webkit-transform 0.5s ease-in;
+    transition: transform 0.5s ease-in;
+    transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+  }
+}
+
+.nav-active {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.toggle .line-one {
+  -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+          transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line-two {
+  opacity: 0;
+}
+
+.toggle .line-three {
+  -webkit-transform: rotate(45deg) translate(-5px, -6px);
+          transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.underline-one {
+  width: 160px;
+  height: .4rem;
+}
+
+#products .product-container {
+  /* position: relative, it’ll remain “in the flow” of the layout but you can move it around! */
+  position: relative;
+  overflow: hidden;
+  background: -webkit-gradient(linear, left top, left bottom, from(black), to(black));
+  background: linear-gradient(black, black);
+  -webkit-transition: all 4s ease;
+  transition: all 4s ease;
+}
+
+#products .item-image {
+  -webkit-transition: all 4s ease;
+  transition: all 4s ease;
+}
+
+#products .item-link {
+  /* position: absolute takes elements “out of flow” so its grid space gets collapsed. */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  color: lightcoral !important;
+  border-top: 2px solid greenyellow;
+  border-bottom: 2px solid greenyellow;
+  -webkit-transition: all 4s ease;
+  transition: all 4s ease;
+  opacity: 0;
+}
+
+#products .item-link:hover {
+  color: saddlebrown !important;
+  border: 2px solid snow;
+  background-color: whitesmoke;
+}
+
+#products .product-container:hover {
+  outline: 10px solid red;
+  outline-offset: 0.8rem;
+}
+
+#products .product-container:hover .item-image {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: 0.6;
+}
+
+#products .product-container:hover .item-link {
+  opacity: 1;
+}
+/*# sourceMappingURL=main.css.map */

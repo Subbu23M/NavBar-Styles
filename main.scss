@@ -1,0 +1,205 @@
+body{
+    font-family: 'Piazzolla', serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+li{
+    list-style: none;
+}
+
+a,a:hover{
+    text-decoration: none;
+}
+
+// For navbar
+nav{
+    min-height: 8vh;
+    background-color: #5D4954;
+
+    .logo{
+
+        a
+            {    
+            letter-spacing: 5px;
+            color: whitesmoke;
+        }
+
+    }
+
+    .nav-links{
+        width: 30%;
+
+        /* z-index:stacks one on each other based on value  */
+        z-index: 7;
+        
+        // background-color: yellow;
+        a{
+            color: whitesmoke;
+            letter-spacing: 3px;
+            font-size: 18px;
+        }
+    }
+
+    .burger div{
+        width: 25px;
+        height: 3px;
+        background-color: whitesmoke;
+        margin: 5px;
+        cursor: pointer;
+
+        // transition:Default Value Duration
+        // transition-timing-functionease - specifies a transition effect with a slow start, then fast, then end slowly (this is default)
+        transition:all 0.3s ease ;
+    }
+}
+
+// Media Queries
+// Works upto 1024px
+
+@media screen and (max-width:1024px){
+    .nav-links{
+        width: 60%;
+        // background-color: yellow;
+    }
+}
+
+// Media Queries
+// For small screens
+
+@media screen and (max-width:768px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        /* position: absolute takes elements “out of flow” so its grid space gets collapsed. */
+        position: absolute;
+
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #5D4954;
+
+        // Convert column into row
+        display: flex;
+
+        // On X-axis
+        flex-direction: column;
+
+        // On Y-axis
+        align-items: center;
+
+        width: 100%!important;
+        transform: translateX(100%);
+
+        // transition:Property Duration
+        // transition-timing-function:ease-in:Specifies a transition effect with a slow start
+        transition: transform 0.5s ease-in;
+
+    }
+}
+
+// Adding classes through JS
+.nav-active{
+    transform: translateX(0%);
+}
+
+.toggle{
+    .line-one{
+        transform: rotate(-45deg) translate(-5px,6px);
+    }
+
+    .line-two{
+        opacity: 0;
+    }
+
+    .line-three{
+        transform: rotate(45deg) translate(-5px,-6px);
+    }
+
+}
+
+// For underline
+.underline-one{
+    width: 160px;
+    height: .4rem;
+}
+
+// For Products
+#products{
+    
+    .product-container{
+        /* position: relative, it’ll remain “in the flow” of the layout but you can move it around! */
+        position: relative;
+
+        overflow: hidden;
+
+        // background:Default Top to Bottom
+        background: linear-gradient(rgb(0,0,0),rgb(0,0,0));
+
+        // transition:Default Value Duration
+        // transition-timing-function :ease - specifies a transition effect with a slow start, then fast, then end slowly (this is default)
+        transition: all 4s ease;
+    }
+
+    .item-image{
+        // transition:Default Value Duration
+        // transition-timing-function :ease - specifies a transition effect with a slow start, then fast, then end slowly (this is default)
+        transition: all 4s ease;
+    }
+
+    .item-link{
+        /* position: absolute takes elements “out of flow” so its grid space gets collapsed. */
+        position: absolute;
+
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        color: lightcoral!important;
+
+        // border-top:size style color
+        border-top: 2px solid greenyellow;
+        border-bottom: 2px solid greenyellow;
+
+        // transition:Default Value Duration
+        // transition-timing-function :ease - specifies a transition effect with a slow start, then fast, then end slowly (this is default)
+        transition: all 4s ease;
+
+        // The opacity-level describes the transparency-level.
+        opacity: 0;
+    }
+
+    .item-link:hover{
+        color: saddlebrown!important;
+
+        // border:size style color
+        border: 2px solid snow;
+
+        background-color: whitesmoke;
+    }
+
+    .product-container:hover{
+        //outline:size style color
+        outline: 10px solid red;
+
+        //The outline-offset property adds space between an outline and the edge or border of an element.
+        // The space between an element and its outline is transparent
+        outline-offset: 0.8rem;
+
+        .item-image{
+            // Zoom-In effect
+            transform: scale(1.2);
+            
+            // The opacity-level describes the transparency-level.
+            opacity: 0.6;
+        }
+        .item-link{
+            // The opacity-level describes the transparency-level.
+            opacity: 1;
+        }
+    }
+
+}

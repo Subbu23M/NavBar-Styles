@@ -1,0 +1,79 @@
+@charset "UTF-8";
+body {
+  font-family: 'Piazzolla', serif;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+#overlay {
+  /* position: absolute takes elements “out of flow” so its grid space gets collapsed. */
+  position: absolute;
+  display: none;
+  background-color: black;
+  padding: 2em;
+  width: calc(100% - 4em);
+  height: calc(100vh - 4em);
+}
+
+#overlay .exit-button {
+  cursor: pointer;
+  width: 18px;
+  float: right;
+}
+
+#overlay ul {
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[4];
+      grid-template-columns: repeat(4, auto);
+  text-transform: capitalize;
+  width: 80%;
+  margin: 10% auto 0 auto;
+}
+
+#overlay ul li a {
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+header {
+  padding: 2em;
+}
+
+header .menu-icon {
+  float: right;
+  cursor: pointer;
+}
+
+section {
+  padding: 4em;
+}
+
+section h1 {
+  font-size: 4em;
+  width: 70%;
+  margin: 1em auto;
+}
+
+section h1::before {
+  content: '';
+  border-top: 5px solid lightgray;
+  display: block;
+}
+
+.show-overlay {
+  display: block;
+}
+/*# sourceMappingURL=design.css.map */

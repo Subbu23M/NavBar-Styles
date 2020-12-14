@@ -1,0 +1,149 @@
+body{
+    font-family: 'Piazzolla', serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    // overflow-x: hidden;
+}
+
+li{
+    list-style: none;
+}
+
+a,a:hover{
+    text-decoration: none;
+}
+
+#overlay{
+    /* position: absolute takes elements “out of flow” so its grid space gets collapsed. */
+    position: absolute;
+
+    display: none;
+
+    background-color: black;
+    padding: 2em;
+    // width: 100%;
+    // height: 100vh;
+
+    width: calc(100% - 4em);
+    height: calc(100vh - 4em);
+
+    .exit-button{
+        cursor: pointer;
+        width: 18px;
+        float: right;
+    }
+
+    ul{
+        padding: 0;
+
+        // Convert row into column
+        display: grid;
+
+        grid-template-columns: repeat(4,auto);
+        text-transform: capitalize;
+        width: 80%;
+
+        // margin:top right bottom left
+        margin: 10% auto 0 auto;
+
+        li a{
+            color: whitesmoke;
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+
+        // li{
+            //The opacity-level describes the transparency-level. 
+        //     opacity: 0;
+        // }
+    }
+
+}
+
+header{
+    padding: 2em;
+
+    .menu-icon{
+        float: right;
+        cursor: pointer;
+    }
+}
+
+section{
+    padding: 4em;
+    
+    h1{
+        font-size: 4em;
+        width: 70%;
+
+        // margin:top & bottom left & right
+        margin: 1em auto;
+
+        &::before{
+            content: '';
+
+            // border-top:size style color
+            border-top: 5px solid lightgray;
+
+            //Displays an element as a block element (like <p>). It starts on a new line, and takes up the whole width.
+            display: block;
+        }
+
+    }
+}
+
+// Adding these class through JS
+.show-overlay{
+    display: block;
+    // animation: slide-menu 1s ease-in forwards;
+
+    // .close{
+    //     animation: show-x 1s 1s forwards;
+    // }
+
+    // li:nth-of-type(1) {
+    //     animation: menu-item-anim .6s forwards 1s ease-in-out;
+    // }
+    // li:nth-of-type(2) {
+    //     animation: menu-item-anim .6s forwards 1.2s ease-in-out;
+    // }
+    // li:nth-of-type(3) {
+    //     animation: menu-item-anim .6s forwards 1.4s ease-in-out;
+    // }
+    // li:nth-of-type(4) {
+    //     animation: menu-item-anim .6s forwards 1.6s ease-in-out;
+    // }
+}
+
+// @keyframes slide-menu {
+//     from{
+//         transform: scaleX(0);
+//     }
+
+//     to{
+//         transform: scaleX(1);
+//     }
+// }
+
+// @keyframes show-x{
+//     from{
+//         opacity: 0;
+//     }
+
+//     to{
+//         opacity: 1;
+//     }
+// }
+
+// @keyframes menu-item-anim {
+//     from{
+//         transform: translateY(30%);
+//         opacity: 0;
+//     }
+
+//     to{
+//         transform: translateY(0);
+//         opacity: 1;
+//     }
+// }
